@@ -9,6 +9,8 @@
     --subtle-text-color: #8e8f99;
     --accent-color: #e7e9fc;
     --light-color: #f4f4fd;
+    --margin-top-net: 48px;
+    --margin-left-net: 24px;
 }
 
 /* =============== COMPONENTS =============== */
@@ -29,6 +31,12 @@ ul {
 body {
     font-family: var(--primary-font-family);
     color: var(--text-color);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .link {
@@ -97,13 +105,18 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+.portfolio-section {
+    padding-top: 96px;
+    padding-bottom: 120px;
+}
 /* =============== /COMPONENTS =============== */
 
 /* =============== HEADER =============== */
 .header-section {
     padding-top: 24px;
     padding-bottom: 24px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--accent-color);
 }
 
 .header {
@@ -245,7 +258,6 @@ body {
     font-size: 20px;
     line-height: 1.2;
     margin-bottom: 8px;
-
 }
 .team-mmbr-psn {
     line-height: 1.5;
@@ -274,6 +286,13 @@ body {
 /* =============== /FOOTER =============== */
 
 /* =============== PROJECTS =============== */
+.filter {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 72px;
+}
+
 .filter-btn {
     color: var(--primary-brand-color);
     background-color: var(--light-color);
@@ -284,11 +303,25 @@ body {
     line-height: 1.5;
 }
 
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--margin-top-net));
+    margin-left: calc(-1 * var(--margin-left-net));
+}
+
 .project-item {
-    width: 360px;
-    height: 420px;
+    flex-basis: calc(100% / 3 - var(--margin-left-net));
+    margin-left: var(--margin-left-net);
+    margin-top: var(--margin-top-net);
+}
+
+.project-item-descr {
     background: #ffffff;
-    border: 1px solid #e7e9fc;
+    border-left: 1px solid var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+    padding: 32px 0 32px 16px;
 }
 
 .project-item-name {
@@ -296,9 +329,10 @@ body {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
+    margin-bottom: 8px;
 }
 
-.project-item-descr {
+.project-item-text {
     line-height: 1.5;
 }
 /* =============== /PROJECTS =============== */
